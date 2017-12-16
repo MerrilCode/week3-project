@@ -1,21 +1,11 @@
 $(document).ready(function(){
 
 
+});
 	
 $(document).keydown(function(e){
-	$(".container").css({
-		backgroundPosition:"0px 0px"
-	});
-	var to;
-	function infinite(){
-	 to = setTimeout(function(){
-	    $('.container').animate({backgroundPosition:"-5000px -2500px"},12000,function(){
-	      $('.container').css({backgroundPosition:'0px 0px'});
-	      infinite();
-	    });    
-	  });
-	}
-infinite();
+	randomlyMoveImage();
+
 	switch(e.which){
 		case 37: //left arrow key
 		if($("#box").position().left <= 1){
@@ -54,9 +44,25 @@ infinite();
 
 });
 
+function randomlyMoveImage(){
+    var width = $(".container").width();
+    var height = $(".container").height();
+    
+    var num = Math.floor((Math.random() * width)+1 );
+    console.log(num);
+    $(".rand-car").css("background-position", "200px 500px");
+    
+    // var y = Math.floor((Math.random() * height)+1);
+  //     $( ".rand-car" ).animate({
+  //   	left: x,
+  //       // top: y
+  // }, function() {
+  //   // Animation complete.
+  //});
+
+  //   setTimeout(randomlyMoveImage, 2000);
+	}
 
 
 
 
-
-});
