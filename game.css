@@ -1,0 +1,46 @@
+body {
+	margin:0;
+	padding:0;
+}
+
+.container {
+	width:920px;
+	height: 600px;
+	background-color: #085fe0;
+	position: relative;
+	background: url();
+	margin:0px auto;
+	overflow: hidden;
+	background-size: cover;	
+	background-repeat: repeat;
+	animation: animate 1s linear infinite;
+
+}
+.row {
+	background-color: #085fe0;
+	width:600px;
+}
+.rand-car {
+	width: 50px;
+	height:50px;
+	background-color: #bc3d23;
+}
+
+#box {
+	background-color: #487f63;
+	 width:100px;
+	 height: 100px;
+	 margin-left:10px;
+	 margin-top: 10px;
+	 margin-bottom: 100px;
+	 position: relative;
+}
+
+@keyframes animate {
+	from {
+		background-position: 0px 0px;
+	}
+	to {
+		background-position: 0px 300px;
+	}
+}
