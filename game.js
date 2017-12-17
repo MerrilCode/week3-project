@@ -3,25 +3,24 @@ $(document).ready(function(){
 var container = $(".container");
 var userCar = $("#box");
 var car1 = $("#car1");
+var score =$("#score");
+var restart = $("#restart");
 var container_left = parseInt(container.css('left'));
 var container_width = parseInt(container.width());
 var container_height = parseInt(container.height());
 var car_width = parseInt(userCar.width());
 var car_height = parseInt(userCar.height());
-var speed = 2;
-var score_counter = 1;
+var speed = 1;
+var score_counter = 0;
 var animation;
+var roadSpeed = 5000;
 // console.log(container_height);
 // console.log(parseInt(car1.css("top")));
-
-
 var canDrive = true;
-
-driveCar();
-
-
-console.log(canDrive);
-animation = requestAnimationFrame(repeat);
+startGame();
+restart.click(function(){
+	startGame();
+});
 function driveCar (){
 	if( canDrive === true){
 		$(document).keydown(function(e){
@@ -31,7 +30,7 @@ function driveCar (){
 					$("#box").clearQueue();
 				}else{
 					$("#box").finish().animate({
-						left: "-=20"
+						left: "-=50"
 
 					},'fast');
 				}
@@ -41,7 +40,7 @@ function driveCar (){
 					$("#box").clearQueue();
 				} else {
 					$("#box").finish().animate({
-						top: "-=20"
+						top: "-=50"
 					});
 				}
 					break;
@@ -50,7 +49,7 @@ function driveCar (){
 					$("#box").clearQueue();
 				} else{
 					$("#box").finish().animate({
-						left: "+=20"
+						left: "+=50"
 					});
 				}
 					break;
@@ -59,7 +58,7 @@ function driveCar (){
 					$("#box").clearQueue();
 				}else {
 					$("#box").finish().animate({
-						top: "+=20"
+						top: "+=50"
 					});
 				}
 					break;
@@ -73,8 +72,8 @@ function driveCar (){
 
  function carDown(car) {
     var car_current_top = parseInt(car.css('top'));
-    container.css('background-image','url(' +"road.jpg" + ')');
-    container.css('animation','animate '+speed+'linear '+'infinite');
+    container.css('background-image','url(' +"" + ')');
+    
     if (car_current_top > container_height) {
        car_current_top = -10;
      var car_left = parseInt(Math.random() * (container_width - car_width));
@@ -90,12 +89,44 @@ function repeat(){
 		return;
 	}
 	 carDown(car1);
+	 score_counter++;
+	 if(score_counter % 20 == 0){
+	 	score.text(parseInt(score.text())+1); 
+
+	 }
+	 if(score_counter % 100 == 0){
+	 	speed++;
+	 	roadSpeed -= 1000; // test and fix
+	 	roadRepeat((roadSpeed)); // test and fix
+
+	 }
+	 restart.hide();
 	 animation = requestAnimationFrame(repeat);
 
 }
+
+function roadRepeat(speed){
+	container.animate({
+		'background-position-y':'0px'
+	}).animate({
+	 	'background-position-y': '300px'
+	 },speed,roadRepeat);
+
+	// container.css('animation','5s '+'linear '+'infinite');
+}
+
+function startGame(){
+	roadRepeat(speed);
+	driveCar();
+	animation = requestAnimationFrame(repeat);
+
+}
+
 function stopGame(){
 	cancelAnimationFrame(animation);
 	canDrive = false;
+	container.css('animation','0s');
+	restart.show();
 	
 }
 

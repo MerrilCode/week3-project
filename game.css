@@ -12,7 +12,7 @@ body {
     overflow: hidden;
    /* background-image: url("road.jpg"); */
     background-repeat: repeat;
-    animation: animate 1s linear infinite;
+    /*animation: animate 1s linear infinite;*/
 }
 
 /*.row {
@@ -52,11 +52,11 @@ body {
 	 bottom: 8%;
      left: 300px;
 }
-#start {
+#score {
 	width: 100px;
 	background-color: yellow;
 }
-
+/*
 @keyframes animate {
 	from {
 		background-position: 0px 0px;
@@ -64,4 +64,4 @@ body {
 	to {
 		background-position: 0px 300px;
 	}
-}
+}*/
