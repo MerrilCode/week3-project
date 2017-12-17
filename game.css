@@ -6,10 +6,11 @@ body {
 	position: relative;
     height: 600px;
     width: 600px;
-    margin-top: 20px;;
+    margin-top:53px;
+    margin-bottom: 53px;
     background-color: #292929;
     overflow: hidden;
-    background-image: url(""); 
+   /* background-image: url("road.jpg"); */
     background-repeat: repeat;
     animation: animate 1s linear infinite;
 }
@@ -47,12 +48,9 @@ body {
 	background-color: #487f63;
 	 width:100px;
 	 height: 100px;
-	 margin-left:10px;
-	 margin-top: 10px;
-	 margin-bottom: 100px;
-	 position: relative;
+	 position: absolute;
 	 bottom: 8%;
-     left: 60%;
+     left: 300px;
 }
 #start {
 	width: 100px;
