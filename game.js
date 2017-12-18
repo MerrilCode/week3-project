@@ -6,6 +6,9 @@ var userCar = $("#box");
 var car1 = $("#car1");
 var car2 = $("#car2");
 var car3 = $("#car3");
+var line_1 = $('#line_1');
+var line_2 = $('#line_2');
+var line_3 = $('#line_3');
 var score =$("#score");
 var restart = $("#restart");
 var container_left = parseInt(container.css('left'));
@@ -14,6 +17,7 @@ var container_height = parseInt(container.height());
 var car_width = parseInt(userCar.width());
 var car_height = parseInt(userCar.height());
 var speed = 1;
+var lineSpeed = 5;
 var fps = 0;
 var score_counter = 0;
 var animation;
@@ -73,7 +77,7 @@ function driveCar (){
 
  function carDown(car) {
     var car_current_top = parseInt(car.css('top'));
-    container.css('background-image','url(' +"" + ')');
+    container.css('background-image','url(' +"road.png" + ')');
     
     if (car_current_top > container_height) {
        car_current_top = -200;
@@ -83,6 +87,13 @@ function driveCar (){
 	   
     car.css('top', car_current_top +speed);
 }
+function lineDown(line){
+	var line_current_top = parseInt(line.css('top'));
+    if (line_current_top > container_height) {
+        line_current_top = -300;
+    }
+    line.css('top', line_current_top + lineSpeed);
+}
 
 function repeat(){
 	if(carCollide(userCar,car1)||carCollide(userCar,car2)||carCollide(userCar,car3)){
@@ -91,7 +102,9 @@ function repeat(){
 		 carDown(car1);
 		 carDown(car2);
 		 carDown(car3);
-
+		 lineDown(line_1);
+		 lineDown(line_2);
+		 lineDown(line_3);
 		 score_counter++;
 		 fps++;
 		 console.log(fps);
@@ -102,8 +115,9 @@ function repeat(){
 		 } 
 		 if(fps%1000 == 0){
 		 	speed++;
-		 	// roadSpeed -= 1000; // test and fix
-		 	// roadRepeat((roadSpeed)); // test and fix
+		 	roadSpeed -= 1000; // test and fix
+		 	roadRepeat(5000); // test and fix
+		 	lineSpeed++;
 
 		 }
 		 restart.hide();
@@ -118,7 +132,7 @@ function roadRepeat(speed){
 		'background-position-y':'0px'
 	}).animate({
 	 	'background-position-y': '300px'
-	 },speed,roadRepeat);
+	 },'speed',roadRepeat);
 
 	// container.css('animation','5s '+'linear '+'infinite');
 }
