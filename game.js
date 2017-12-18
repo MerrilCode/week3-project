@@ -22,51 +22,47 @@ restart.click(function(){
 	startGame();
 });
 function driveCar (){
-	if( canDrive === true){
-		$(document).keydown(function(e){
-			switch(e.which){
-				case 37: //left arrow key
-				if($("#box").position().left <= 5){
-					$("#box").clearQueue();
-				}else{
-					$("#box").finish().animate({
-						left: "-=50"
+	$(document).keydown(function(e){
+		switch(e.which){
+			case 37: //left arrow key
+			if($("#box").position().left <= 5){
+				$("#box").clearQueue();
+			}else{
+				$("#box").finish().animate({
+					left: "-=50"
 
-					},'fast');
-				}
-					break;
-				case 38: // up arrow key
-				if($("#box").position().top <= 5){
-					$("#box").clearQueue();
-				} else {
-					$("#box").finish().animate({
-						top: "-=50"
-					});
-				}
-					break;
-				case 39: // right arrow key
-				if($("#box").position().left >= 599){
-					$("#box").clearQueue();
-				} else{
-					$("#box").finish().animate({
-						left: "+=50"
-					});
-				}
-					break;
-				case 40: // down arrow key
-				if($("#box").position().top >=560){
-					$("#box").clearQueue();
-				}else {
-					$("#box").finish().animate({
-						top: "+=50"
-					});
-				}
-					break;
+				},'fast');
 			}
-		});
-	}else if(canDrive == false){
-		alert("You crashed!");
-	}
+				break;
+			case 38: // up arrow key
+			if($("#box").position().top <= 5){
+				$("#box").clearQueue();
+			} else {
+				$("#box").finish().animate({
+					top: "-=50"
+				});
+			}
+				break;
+			case 39: // right arrow key
+			if($("#box").position().left >= 599){
+				$("#box").clearQueue();
+			} else{
+				$("#box").finish().animate({
+					left: "+=50"
+				});
+			}
+				break;
+			case 40: // down arrow key
+			if($("#box").position().top >=500){
+				$("#box").clearQueue();
+			}else {
+				$("#box").finish().animate({
+					top: "+=50"
+				});
+			}
+				break;
+		}
+	});
 }
 
 
@@ -124,6 +120,7 @@ function startGame(){
 
 function stopGame(){
 	cancelAnimationFrame(animation);
+	stopDrive();
 	canDrive = false;
 	container.css('animation','0s');
 	restart.show();
@@ -149,6 +146,27 @@ function carCollide(car1,car2){
         } else{
         	return true;
     	}	
+}
+
+function stopDrive (){
+	$(document).keydown(function(e){
+		switch(e){
+			case 37:
+				$("#box").stop();
+				break;
+			case 38:
+				$("#box").stop();
+				break;
+			case 39:
+				$("#box").stop();
+				break;
+			case 40:
+				$("#box").stop();
+				break;
+
+		}
+	});
+
 }
 
 
