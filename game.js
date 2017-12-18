@@ -22,7 +22,7 @@ restart.click(function(){
 	startGame();
 });
 function driveCar (){
-	$(document).keydown(function(e){
+	$(document).on("keydown",function(e){
 		switch(e.which){
 			case 37: //left arrow key
 			if($("#box").position().left <= 5){
@@ -149,23 +149,24 @@ function carCollide(car1,car2){
 }
 
 function stopDrive (){
-	$(document).keydown(function(e){
-		switch(e){
-			case 37:
-				$("#box").stop();
-				break;
-			case 38:
-				$("#box").stop();
-				break;
-			case 39:
-				$("#box").stop();
-				break;
-			case 40:
-				$("#box").stop();
-				break;
+	$(document).off("keydown");
+	// $(document).keydown(function(e){
+	// 	switch(e){
+	// 		case 37:
+	// 			$("#box").stop();
+	// 			break;
+	// 		case 38:
+	// 			$("#box").stop();
+	// 			break;
+	// 		case 39:
+	// 			$("#box").stop();
+	// 			break;
+	// 		case 40:
+	// 			$("#box").stop();
+	// 			break;
 
-		}
-	});
+	// 	}
+	// });
 
 }
 
