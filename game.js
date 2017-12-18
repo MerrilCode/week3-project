@@ -1,3 +1,4 @@
+var gamePlay = false;
 $(document).ready(function(){
 	
 var container = $(".container");
@@ -11,16 +12,18 @@ var container_height = parseInt(container.height());
 var car_width = parseInt(userCar.width());
 var car_height = parseInt(userCar.height());
 var speed = 1;
+var fps = 0;
 var score_counter = 0;
 var animation;
+
 var roadSpeed = 5000;
-// console.log(container_height);
-// console.log(parseInt(car1.css("top")));
-var canDrive = true;
 startGame();
+
 restart.click(function(){
-	startGame();
+	location.reload();
+
 });
+
 function driveCar (){
 	$(document).on("keydown",function(e){
 		switch(e.which){
@@ -71,7 +74,7 @@ function driveCar (){
     container.css('background-image','url(' +"" + ')');
     
     if (car_current_top > container_height) {
-       car_current_top = -10;
+       car_current_top = -200;
      var car_left = parseInt(Math.random() * (container_width - car_width));
     car.css('left', car_left);
      }
@@ -82,22 +85,26 @@ function driveCar (){
 function repeat(){
 	if(carCollide(userCar,car1)){
 		stopGame();
-		return;
+	} else{
+		 carDown(car1);
+		 score_counter++;
+		 fps++;
+		 console.log(fps);
+		 
+		 if(score_counter % 20 == 0){
+		 	score.text(parseInt(score.text())+1); 
+
+		 } 
+		 if(fps%1000 == 0){
+		 	speed++;
+		 	// roadSpeed -= 1000; // test and fix
+		 	// roadRepeat((roadSpeed)); // test and fix
+
+		 }
+		 restart.hide();
+		requestAnimationFrame(repeat);
 	}
-	 carDown(car1);
-	 score_counter++;
-	 if(score_counter % 20 == 0){
-	 	score.text(parseInt(score.text())+1); 
 
-	 }
-	 if(score_counter % 100 == 0){
-	 	speed++;
-	 	roadSpeed -= 1000; // test and fix
-	 	roadRepeat((roadSpeed)); // test and fix
-
-	 }
-	 restart.hide();
-	 animation = requestAnimationFrame(repeat);
 
 }
 
@@ -115,16 +122,17 @@ function startGame(){
 	roadRepeat(speed);
 	driveCar();
 	animation = requestAnimationFrame(repeat);
+	score_counter =0;
 
 }
 
 function stopGame(){
 	cancelAnimationFrame(animation);
 	stopDrive();
-	canDrive = false;
+	gamePlay = false;
+	console.log(gamePlay);
 	container.css('animation','0s');
-	restart.show();
-	
+	restart.show();	
 }
 
 function carCollide(car1,car2){
@@ -150,23 +158,9 @@ function carCollide(car1,car2){
 
 function stopDrive (){
 	$(document).off("keydown");
-	// $(document).keydown(function(e){
-	// 	switch(e){
-	// 		case 37:
-	// 			$("#box").stop();
-	// 			break;
-	// 		case 38:
-	// 			$("#box").stop();
-	// 			break;
-	// 		case 39:
-	// 			$("#box").stop();
-	// 			break;
-	// 		case 40:
-	// 			$("#box").stop();
-	// 			break;
+}
 
-	// 	}
-	// });
+function counter(){
 
 }
 
