@@ -4,6 +4,8 @@ $(document).ready(function(){
 var container = $(".container");
 var userCar = $("#box");
 var car1 = $("#car1");
+var car2 = $("#car2");
+var car3 = $("#car3");
 var score =$("#score");
 var restart = $("#restart");
 var container_left = parseInt(container.css('left'));
@@ -83,10 +85,13 @@ function driveCar (){
 }
 
 function repeat(){
-	if(carCollide(userCar,car1)){
+	if(carCollide(userCar,car1)||carCollide(userCar,car2)||carCollide(userCar,car3)){
 		stopGame();
 	} else{
 		 carDown(car1);
+		 carDown(car2);
+		 carDown(car3);
+
 		 score_counter++;
 		 fps++;
 		 console.log(fps);
