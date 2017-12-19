@@ -40,16 +40,10 @@ body {
 #car1 {
 	width: 63px;
 	height: 128px;
-<<<<<<< HEAD
 	background-color: #bc3d23;
 	top: -100px;
     left: 60%;
      background-image: url("car1.png");
-=======
-	top: -100px;
-    left: 60%;
-    background-image: url("car1.png");
->>>>>>> 4a15d8f9f291d5ed48bd761855307c98ca80eb7a
 }
 
 #car2 {
@@ -68,12 +62,12 @@ body {
 }
 
 #box {
-	 width:80px;
-	 height: 176px;
+	 width:64px;
+	 height: 162px;
 	 position: absolute;
 	 bottom: 8%;
      left: 300px;
-     background-image: url("ferrari.png");
+     background-image: url("ferrari_67x164.png");
 }
 #score {
 	width: 100px;
