@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Week-3-Project</title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="game-test.css">  
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3 col-md-3 col-sm-3">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12">
+						<div id="score">0</div>
+					</div>
+					<div class="col-lg-12 col-md-12 col-sm-12">
+						<div id="instruction">
+							<p> dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud</p>
+							<button id="instructionClose"></button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="roadCol" class="col-lg-9 col-md-9 col-sm-9">
+				
+				<div id="restartDiv">
+					<p> You crashed</p>
+					<button id="restart" class="btn btn-info"><span class="glyphicon glyphicon-repeat"></span> Restart Game</button>
+				</div>	
+				<div id="line1" class="line"></div>
+		        <div id="line2" class="line"></div>
+		        <div id="line3" class="line"></div>
+				<div id="box" class="car"></div>
+				<div id="car1" class="car"></div>	
+				<div id="car2" class="car"></div>	
+				<div id="car3" class="car"></div>
+			</div>
+		</div>
+	</div>
+
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="game-test.js"></script>
+</body>
+</html>

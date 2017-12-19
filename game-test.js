@@ -1,30 +1,29 @@
-
 $(document).ready(function(){
 
 
 $("#instructionClose").on("click", function(){
-var container = $(".container");
+var roadCol = $("#roadCol");
 var userCar = $("#box");
 var car1 = $("#car1");
 var car2 = $("#car2");
 var car3 = $("#car3");
-var line_1 = $('#line_1');
-var line_2 = $('#line_2');
-var line_3 = $('#line_3');
+var line1 = $('#line1');
+var line2 = $('#line2');
+var line3 = $('#line3');
 var score =$("#score");
 var restart = $("#restart");
 var restartDiv = $("#restartDiv");
 var instruction = $("#instruction");
 var audio = $("#audio");
-var container_left = parseInt(container.css('left'));
-var container_width = parseInt(container.width());
-var container_height = parseInt(container.height());
-var car_width = parseInt(userCar.width());
-var car_height = parseInt(userCar.height());
+var roadColLeft = parseInt(roadCol.css('left'));
+var roadColWidth = parseInt(roadCol.width());
+var roadColHeight = parseInt(roadCol.height());
+var carWidth = parseInt(userCar.width());
+var carHeight = parseInt(userCar.height());
 var speed = 1;
 var lineSpeed = 5;
 var fps = 0;
-var score_counter = 0;
+var scoreCounter = 0;
 var animation;
 var cars = new Array();
 cars[0] = 'car1.png';
@@ -86,23 +85,23 @@ function driveCar (){
 
 
  function carDown(car) {
-    var car_current_top = parseInt(car.css('top'));
-    container.css('background-image','url(' +"road.jpg" + ')');
+    var carCurrentTop = parseInt(car.css('top'));
+    roadCol.css('background-image','url(' +"road.jpg" + ')');
     
-    if (car_current_top > container_height) {
-       car_current_top = -200;
-     var car_left = parseInt(Math.random() * (container_width - car_width));
-    car.css('left', car_left);
+    if (carCurrentTop > roadColHeight) {
+       carCurrentTop = -200;
+     var carLeft = parseInt(Math.random() * (roadColWidth - carWidth));
+    car.css('left', carLeft);
      }
 	   
-    car.css('top', car_current_top +speed);
+    car.css('top', carCurrentTop +speed);
 }
 function lineDown(line){
-	var line_current_top = parseInt(line.css('top'));
-    if (line_current_top > container_height) {
-        line_current_top = -300;
+	var lineCurrentTop = parseInt(line.css('top'));
+    if (lineCurrentTop > roadColHeight) {
+        lineCurrentTop = -300;
     }
-    line.css('top', line_current_top + lineSpeed);
+    line.css('top', lineCurrentTop + lineSpeed);
 }
 
 function repeat(){
@@ -112,13 +111,13 @@ function repeat(){
 		 carDown(car1);
 		 carDown(car2);
 		 carDown(car3);
-		 lineDown(line_1);
-		 lineDown(line_2);
-		 lineDown(line_3);
-		 score_counter++;
+		 lineDown(line1);
+		 lineDown(line2);
+		 lineDown(line3);
+		 scoreCounter++;
 		 fps++;
 
-		 if(score_counter % 20 == 0){
+		 if(scoreCounter % 20 == 0){
 		 	score.text(parseInt(score.text())+1); 
 
 
@@ -143,7 +142,7 @@ function repeat(){
 }
 
 function roadRepeat(speed){
-	container.animate({
+	roadCol.animate({
 		'background-position-y':'0px'
 	}).animate({
 	 	'background-position-y': '300px'
@@ -156,7 +155,7 @@ function startGame(){
 	roadRepeat(speed);
 	driveCar();
 	animation = requestAnimationFrame(repeat);
-	score_counter =0;
+	scoreCounter =0;
 
 }
 
@@ -164,8 +163,6 @@ function stopGame(){
 	cancelAnimationFrame(animation);
 	stopDrive();
 	gamePlay = false;
-	console.log(gamePlay);
-	// container.css('animation','0s');
 	restart.fadeToggle();	
 	restartDiv.fadeToggle();
 	userCar.effect("bounce",{times:2});
@@ -210,8 +207,3 @@ function selectCars(){
 });	
 
 });
-
-
-
-
-

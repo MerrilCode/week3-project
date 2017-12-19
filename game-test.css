@@ -4,7 +4,7 @@ body {
 	background-image: url("page-background.jpeg");
 	z-index: 1;
 }
-.container {
+#roadCol {
 	position: relative;
     height: 825px;
     width: 630px;
@@ -129,13 +129,3 @@ body {
 div >p{
 	color: white;
 }
-
-/*
-@keyframes animate {
-	from {
-		background-position: 0px 0px;
-	}
-	to {
-		background-position: 0px 300px;
-	}
-}*/
