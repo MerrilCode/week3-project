@@ -137,6 +137,16 @@ body {
 #instructionClose {
 	font-size: 20px;
 }
+#speed {
+	margin-top: 25px;
+}
+#currentSpeed {
+	z-index: 1;
+	text-align: center;
+}
+#speedoMeter {
+	z-index: -1;
+}
 div >p{
 	color: white;
 }

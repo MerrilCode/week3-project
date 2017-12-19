@@ -20,7 +20,7 @@ var roadColWidth = parseInt(roadCol.width());
 var roadColHeight = parseInt(roadCol.height());
 var carWidth = parseInt(userCar.width());
 var carHeight = parseInt(userCar.height());
-var speed = 5;
+var speed = 2;
 var lineSpeed = 5;
 var fps = 0;
 var scoreCounter = 0;
@@ -128,6 +128,7 @@ function repeat(){
 		 	// roadRepeat(5000); // test and fix
 		 	lineSpeed++;
 		 	// selectCars();
+		 	$("#speed").text();
 
 		 }
 		
