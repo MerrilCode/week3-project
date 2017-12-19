@@ -81,6 +81,13 @@ body {
 	font-size: 30px;
 	border-radius: 50%;
 }
+/*#speedoMeter {
+	width : 200px;
+	height: 200px;
+	background-color: red;
+	float: right; 
+	margin-top: 200px;
+}*/
 .line{
     position: absolute;
     height: 150px;
@@ -98,19 +105,20 @@ body {
     top: 450px;
 }
 #restartDiv {
-	position: absolute;
-	width:50%;
-	height: 50%;
+	position: relative;
+	width:30%;
+	height: 20%;
 	background-color: #2cbfe8;
 	display: none;
 	text-align: center;
-	margin-top: 100px;
-	margin-bottom: 100px;
-	margin-left: 100px;
-	margin-right: 100px;
-	padding-top: 100px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	margin-left: 50px;
+	margin-right: 50px;
+	padding-top: 50px;
 	z-index: 1;
 	border-radius: 25%;
+	font-size: 30px;
 }
 div >p{
 	color: white;

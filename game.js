@@ -12,6 +12,7 @@ var line_3 = $('#line_3');
 var score =$("#score");
 var restart = $("#restart");
 var restartDiv = $("#restartDiv");
+var audio = $("#audio").attr('src','formula+1.mp3');
 var container_left = parseInt(container.css('left'));
 var container_width = parseInt(container.width());
 var container_height = parseInt(container.height());
@@ -130,6 +131,8 @@ function repeat(){
 		 restart.hide();
 		 restartDiv.hide();
 		requestAnimationFrame(repeat);
+		audio.attr("loop")[2];
+
 		
 	}
 
