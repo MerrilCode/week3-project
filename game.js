@@ -11,6 +11,7 @@ var line_2 = $('#line_2');
 var line_3 = $('#line_3');
 var score =$("#score");
 var restart = $("#restart");
+var restartDiv = $("#restartDiv");
 var container_left = parseInt(container.css('left'));
 var container_width = parseInt(container.width());
 var container_height = parseInt(container.height());
@@ -121,6 +122,7 @@ function repeat(){
 
 		 }
 		 restart.hide();
+		 restartDiv.hide();
 		requestAnimationFrame(repeat);
 	}
 
@@ -150,8 +152,9 @@ function stopGame(){
 	stopDrive();
 	gamePlay = false;
 	console.log(gamePlay);
-	container.css('animation','0s');
-	restart.show();	
+	// container.css('animation','0s');
+	restart.fadeToggle();	
+	restartDiv.fadeToggle();
 }
 
 function carCollide(car1,car2){
@@ -178,11 +181,6 @@ function carCollide(car1,car2){
 function stopDrive (){
 	$(document).off("keydown");
 }
-
-function counter(){
-
-}
-
 
 });
 
