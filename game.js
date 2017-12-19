@@ -78,7 +78,7 @@ function driveCar (){
 
  function carDown(car) {
     var car_current_top = parseInt(car.css('top'));
-    container.css('background-image','url(' +"road.png" + ')');
+    container.css('background-image','url(' +"road.jpg" + ')');
     
     if (car_current_top > container_height) {
        car_current_top = -200;
@@ -116,8 +116,8 @@ function repeat(){
 		 } 
 		 if(fps%1000 == 0){
 		 	speed++;
-		 	roadSpeed -= 1000; // test and fix
-		 	roadRepeat(5000); // test and fix
+		 	// roadSpeed -= 1000; // test and fix
+		 	// roadRepeat(5000); // test and fix
 		 	lineSpeed++;
 
 		 }
@@ -134,7 +134,7 @@ function roadRepeat(speed){
 		'background-position-y':'0px'
 	}).animate({
 	 	'background-position-y': '300px'
-	 },'speed',roadRepeat);
+	 });
 
 	// container.css('animation','5s '+'linear '+'infinite');
 }

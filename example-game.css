@@ -1,7 +1,6 @@
 body {
     height: 100%;
     width: 100%;
-    margin: 0;
     background-color: #45d678;
     font-family: sans-serif;
 }
@@ -11,7 +10,6 @@ body {
     height: 90vh;
     width: 25%;
     left: 35%;
-    margin-top: 20px;;
     background-color: #292929;
     overflow: hidden;
 }
