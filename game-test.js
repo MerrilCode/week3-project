@@ -142,7 +142,7 @@ function repeat(){
 
 }
 
-function roadRepeat(speed){
+function roadRepeat(){
 	roadCol.animate({
 		'background-position-y':'0px'
 	}).animate({
@@ -153,7 +153,7 @@ function roadRepeat(speed){
 }
 
 function startGame(){
-	roadRepeat(speed);
+	roadRepeat();
 	driveCar();
 	animation = requestAnimationFrame(repeat);
 	scoreCounter =0;
@@ -170,7 +170,7 @@ function stopGame(){
 	audio.loop=false;
 	audio.pause();
 	$("#crashingCar")[0].play();
-	$(".burning").burn();
+	$("body").css("animation","0s")
 
 }
 

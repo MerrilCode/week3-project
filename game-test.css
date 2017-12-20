@@ -2,7 +2,8 @@ body {
 	margin: 0;
 	padding: 0;
 	background-image: url("page-background.jpeg");
-	z-index: 1;
+	background-repeat: repeat;
+    animation: animate linear 10s infinite;
 }
 audio {
 	width: 70%;
@@ -13,7 +14,7 @@ audio {
     height: 850px;
     width: 630px;
     background-color: #292929;
-    overflow: hidden;
+   /* overflow: hidden;*/
    /* background-image: url("road.jpg"); */
     background-repeat: repeat;
     /*animation: animate 1s linear infinite;*/
@@ -203,15 +204,12 @@ div >p{
 
 @media only screen and (max-width: 400px){
 	#roadCol {
-	position: relative;
-    height: 600px;
-    width: 300px;
-    background-color: #292929;
-    overflow: hidden;
-   /* background-repeat: repeat;*/
-    /*animation: animate 1s linear infinite;*/
-    margin-left: 50px;
-
+		position: relative;
+	    height: 600px;
+	    width: 300px;
+	    background-color: #292929;
+	    overflow: hidden;
+	    margin-left: 50px;
 	}
 	#box {
 		 width:64px;
@@ -235,5 +233,13 @@ div >p{
 		color: white;
 		font-size: 30px;
 		border-radius: 50%;
+	}
+}
+@keyframes animate {
+	from {
+		background-position: 0px 0px;
+	}
+	to {
+		background-position: 0 300px;
 	}
 }
