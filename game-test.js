@@ -1,6 +1,7 @@
 $(document).ready(function(){
-
-
+var audio = $("audio")[0];
+audio.loop=false;
+// audio.autoplay = false;
 $("#instructionClose").on("click", function(){
 var roadCol = $("#roadCol");
 var userCar = $("#box");
@@ -14,7 +15,7 @@ var score =$("#score");
 var restart = $("#restart");
 var restartDiv = $("#restartDiv");
 var instruction = $("#instruction");
-var audio = $("#audio");
+var currentSpeed = $("#currentSpeed");
 var roadColLeft = parseInt(roadCol.css('left'));
 var roadColWidth = parseInt(roadCol.width());
 var roadColHeight = parseInt(roadCol.height());
@@ -30,10 +31,10 @@ cars[0] = 'car1.png';
 cars[1] = 'userCar.png';
 cars[2] = 'lambo.png';
 // var roadSpeed = 5000;
-var audioTag = $();
 startGame();
+audio.loop=true;
+audio.play();
 instruction.hide();
-
 restart.click(function(){
 	location.reload();
 
@@ -107,6 +108,7 @@ function lineDown(line){
 function repeat(){
 	if(carCollide(userCar,car1)||carCollide(userCar,car2)||carCollide(userCar,car3)){
 		stopGame();
+
 	} else{
 		 carDown(car1);
 		 carDown(car2);
@@ -117,9 +119,9 @@ function repeat(){
 		 scoreCounter++;
 		 fps++;
 
-		 if(scoreCounter % 20 == 0){
+		 if(scoreCounter % 50 == 0){
 		 	score.text(parseInt(score.text())+1); 
-
+		 	currentSpeed.text(parseInt(currentSpeed.text())+2);
 
 		 } 
 		 if(fps%1000 == 0){
@@ -128,13 +130,15 @@ function repeat(){
 		 	// roadRepeat(5000); // test and fix
 		 	lineSpeed++;
 		 	// selectCars();
-		 	$("#speed").text();
 
 		 }
 		
 		 restart.hide();
 		 restartDiv.hide();
 		requestAnimationFrame(repeat);
+		carCollisionEffect();
+		
+
 		
 		
 	}
@@ -167,6 +171,8 @@ function stopGame(){
 	restart.fadeToggle();	
 	restartDiv.fadeToggle();
 	userCar.effect("bounce",{times:2});
+	audio.loop=false;
+	audio.pause();
 
 }
 
@@ -203,6 +209,16 @@ function selectCars(){
 	car1.css('background-image','url(' +cars[car1Image] + ')');
 	car2.css('background-image','url(' +cars[car2Image] + ')');
 	car3.css('background-image','url(' +cars[car3Image] + ')');
+}
+
+function carCollisionEffect(){
+	if(carCollide(userCar,car1)){
+		car1.effect("bounce",{times:2});
+	} else if(carCollide(userCar,car2)){
+		car2.effect("bounce",{times:2});
+	} else if(carCollide(userCar,car3)){
+		car3.effect("bounce",{times:2});
+	}
 }
 
 });	

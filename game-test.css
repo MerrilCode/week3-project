@@ -138,14 +138,24 @@ body {
 	font-size: 20px;
 }
 #speed {
+	position: relative;
+	width: 100%;
 	margin-top: 25px;
 }
 #currentSpeed {
+	width: 50px;
+	position: absolute;
 	z-index: 1;
+	top:40px;
+	left: 60px;
 	text-align: center;
+	color: red;
 }
 #speedoMeter {
 	z-index: -1;
+}
+#audioControl {
+	margin-top: 25px;
 }
 div >p{
 	color: white;
