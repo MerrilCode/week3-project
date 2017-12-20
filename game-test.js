@@ -1,8 +1,6 @@
 $(document).ready(function(){
 var audio = $("audio")[0];
 audio.loop=false;
-// audio.autoplay = false;
-// $("#instructionClose").on("click", function(){
 var roadCol = $("#roadCol");
 var userCar = $("#box");
 var car1 = $("#car1");
@@ -34,21 +32,15 @@ cars[2] = 'lambo.png';
 startGame();
 audio.loop=true;
 audio.play();
-// instruction.hide();
 restart.click(function(){
 	location.reload();
 
 });
-console.log(roadColWidth);
-console.log($("#box").position().left);
 function driveCar (){
-	var documentWidth = ($(document).width());
-	console.log(documentWidth); //use this variable to make the moving of the controller car to have limits
-	if(($(document).width() > 720)){
 		$(document).on("keydown",function(e){
 			switch(e.which){
 				case 37: //left arrow key
-				if($("#box").position().left <=15){
+				if($("#box").position().left <= 20){
 					$("#box").clearQueue();
 				}else{
 					$("#box").finish().animate({
@@ -67,7 +59,7 @@ function driveCar (){
 				}
 					break;
 				case 39: // right arrow key
-				if($("#box").position().left >=530){
+				if($("#box").position().left >=(roadColWidth-100)){
 					$("#box").clearQueue();
 				} else{
 					$("#box").finish().animate({
@@ -76,7 +68,7 @@ function driveCar (){
 				}
 					break;
 				case 40: // down arrow key
-				if($("#box").position().top >=500){
+				if($("#box").position().top >=590){
 					$("#box").clearQueue();
 				}else {
 					$("#box").finish().animate({
@@ -86,93 +78,6 @@ function driveCar (){
 					break;
 			}
 		});
-	} else if (($(document).width() > 500)) {
-		$(document).on("keydown",function(e){
-			switch(e.which){
-				case 37: //left arrow key
-				if($("#box").position().left <= 5){
-					$("#box").clearQueue();
-				}else{
-					$("#box").finish().animate({
-						left: "-=50"
-
-					},'fast');
-				}
-					break;
-				case 38: // up arrow key
-				if($("#box").position().top <= 5){
-					$("#box").clearQueue();
-				} else {
-					$("#box").finish().animate({
-						top: "-=50"
-					});
-				}
-					break;
-				case 39: // right arrow key
-				if($("#box").position().left >= 499){
-					$("#box").clearQueue();
-				} else{
-					$("#box").finish().animate({
-						left: "+=50"
-					});
-				}
-					break;
-				case 40: // down arrow key
-				if($("#box").position().top >=500){
-					$("#box").clearQueue();
-				}else {
-					$("#box").finish().animate({
-						top: "+=50"
-					});
-				}
-					break;
-			}
-		});
-	}else if (($(document).width() > 250)) {
-		$(document).on("keydown",function(e){
-			switch(e.which){
-				case 37: //left arrow key
-				if($("#box").position().left <= 5){
-					$("#box").clearQueue();
-				}else{
-					$("#box").finish().animate({
-						left: "-=50"
-
-					},'fast');
-				}
-					break;
-				case 38: // up arrow key
-				if($("#box").position().top <= 5){
-					$("#box").clearQueue();
-				} else {
-					$("#box").finish().animate({
-						top: "-=50"
-					});
-				}
-					break;
-				case 39: // right arrow key
-				if($("#box").position().left >= 150){
-					$("#box").clearQueue();
-				} else{
-					$("#box").finish().animate({
-						left: "+=50"
-					});
-				}
-					break;
-				case 40: // down arrow key
-				if($("#box").position().top >=500){
-					$("#box").clearQueue();
-				}else {
-					$("#box").finish().animate({
-						top: "+=50"
-					});
-				}
-					break;
-			}
-		});
-	}
-
-	
 }
 
 
@@ -264,6 +169,8 @@ function stopGame(){
 	userCar.effect("bounce",{times:2});
 	audio.loop=false;
 	audio.pause();
+	$("#crashingCar")[0].play();
+	$(".burning").burn();
 
 }
 
@@ -312,6 +219,5 @@ function carCollisionEffect(){
 	}
 }
 
-// });	
 
 });

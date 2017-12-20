@@ -4,6 +4,9 @@ body {
 	background-image: url("page-background.jpeg");
 	z-index: 1;
 }
+audio {
+	width: 70%;
+}
 
 #roadCol {
 	position: relative;
@@ -18,19 +21,6 @@ body {
 
 }
 
-/*.row {
-	width:600px;
-	height: 600px;
-	background-color: red;
-	border: 1px solid black;
-	position: relative;
-	background-image: url(""); 
-	margin:0px auto;
-	overflow: hidden;
-	background-size: cover;	
-	background-repeat: repeat;
-	animation: animate 1s linear infinite;
-}*/
 .car{
     position: absolute;
     height: 60px;
@@ -153,11 +143,6 @@ body {
 div >p{
 	color: white;
 }
-/*@media only screen and(max-width: 920px){
-	audio {
-		width:50%;
-	}
-}*/
 @media only screen and (max-width: 920px){
 	#roadCol {
 	position: relative;
@@ -167,8 +152,13 @@ div >p{
     overflow: hidden;
     background-repeat: repeat;
     /*animation: animate 1s linear infinite;*/
-  
-
+	}
+	#box {
+		position: relative;
+	}
+	#restartDiv {
+		width: 50%;
+		height: 50%;
 	}
 	#score {
 		/*width: 100px;
