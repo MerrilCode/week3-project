@@ -158,16 +158,16 @@ div >p{
 		width:50%;
 	}
 }*/
-@media only screen and (max-width: 720px){
+@media only screen and (max-width: 920px){
 	#roadCol {
 	position: relative;
     height: 600px;
-    width: 100%;
+    width: 80%;
     background-color: #292929;
     overflow: hidden;
     background-repeat: repeat;
     /*animation: animate 1s linear infinite;*/
-    margin-left: 0;
+  
 
 	}
 	#score {
@@ -211,39 +211,39 @@ div >p{
 
 }
 
-/*@media only screen and (max-width: 300px){
+@media only screen and (max-width: 400px){
 	#roadCol {
 	position: relative;
     height: 600px;
-    width: 250px;
+    width: 300px;
     background-color: #292929;
     overflow: hidden;
-    background-repeat: repeat;*/
+   /* background-repeat: repeat;*/
     /*animation: animate 1s linear infinite;*/
-    /*margin-left: 50px;*/
+    margin-left: 50px;
 
-	/*}
+	}
 	#box {
 		 width:64px;
 		 height: 162px;
-		 position: absolute;*/
-		/* bottom: 8%;
-	     left: 300px;*/
-	    /* right: 50px;
+		 position: absolute;
+		 bottom: 8%;
+	     left: 20px;
+	     right: 50px;
 	     background-image: url("ferrari_67x164.png");
-	}*/
-	/*#score {*/
-		/*width: 100px;
-		height: 100px;*/
-		/*background-color: #cc351a;*/
-	/*	float:left;*/
-		/*text-align: center;*/
-		/*margin-left: 25px;
-		margin-right: 50px;*/
-		/*margin-top: 100px;
+	}
+	#score {
+		width: 100px;
+		height: 100px;
+		background-color: #cc351a;
+		float:left;
+		text-align: center;
+		margin-left: 25px;
+		margin-right: 50px;
+		margin-top: 100px;
 		padding-top: 25px;
 		color: white;
 		font-size: 30px;
 		border-radius: 50%;
 	}
-}*/
+}

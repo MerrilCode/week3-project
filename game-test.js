@@ -86,7 +86,7 @@ function driveCar (){
 					break;
 			}
 		});
-	} else if (($(document).width() > 300)) {
+	} else if (($(document).width() > 500)) {
 		$(document).on("keydown",function(e){
 			switch(e.which){
 				case 37: //left arrow key
@@ -109,7 +109,49 @@ function driveCar (){
 				}
 					break;
 				case 39: // right arrow key
-				if($("#box").position().left >= 400){
+				if($("#box").position().left >= 499){
+					$("#box").clearQueue();
+				} else{
+					$("#box").finish().animate({
+						left: "+=50"
+					});
+				}
+					break;
+				case 40: // down arrow key
+				if($("#box").position().top >=500){
+					$("#box").clearQueue();
+				}else {
+					$("#box").finish().animate({
+						top: "+=50"
+					});
+				}
+					break;
+			}
+		});
+	}else if (($(document).width() > 250)) {
+		$(document).on("keydown",function(e){
+			switch(e.which){
+				case 37: //left arrow key
+				if($("#box").position().left <= 5){
+					$("#box").clearQueue();
+				}else{
+					$("#box").finish().animate({
+						left: "-=50"
+
+					},'fast');
+				}
+					break;
+				case 38: // up arrow key
+				if($("#box").position().top <= 5){
+					$("#box").clearQueue();
+				} else {
+					$("#box").finish().animate({
+						top: "-=50"
+					});
+				}
+					break;
+				case 39: // right arrow key
+				if($("#box").position().left >= 150){
 					$("#box").clearQueue();
 				} else{
 					$("#box").finish().animate({
