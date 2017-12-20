@@ -207,7 +207,8 @@ function selectCars(){
 	car3.css('background-image','url(' +cars[car3Image] + ')');
 }
 
-});	
+	});
+
 
 });
 

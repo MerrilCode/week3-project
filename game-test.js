@@ -2,7 +2,7 @@ $(document).ready(function(){
 var audio = $("audio")[0];
 audio.loop=false;
 // audio.autoplay = false;
-$("#instructionClose").on("click", function(){
+// $("#instructionClose").on("click", function(){
 var roadCol = $("#roadCol");
 var userCar = $("#box");
 var car1 = $("#car1");
@@ -34,7 +34,7 @@ cars[2] = 'lambo.png';
 startGame();
 audio.loop=true;
 audio.play();
-instruction.hide();
+// instruction.hide();
 restart.click(function(){
 	location.reload();
 
@@ -221,6 +221,6 @@ function carCollisionEffect(){
 	}
 }
 
-});	
+// });	
 
 });
