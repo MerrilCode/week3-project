@@ -39,49 +39,98 @@ restart.click(function(){
 	location.reload();
 
 });
-
+console.log(roadColWidth);
+console.log($("#box").position().left);
 function driveCar (){
-	$(document).on("keydown",function(e){
-		switch(e.which){
-			case 37: //left arrow key
-			if($("#box").position().left <= 5){
-				$("#box").clearQueue();
-			}else{
-				$("#box").finish().animate({
-					left: "-=50"
+	var documentWidth = ($(document).width());
+	console.log(documentWidth); //use this variable to make the moving of the controller car to have limits
+	if(($(document).width() > 720)){
+		$(document).on("keydown",function(e){
+			switch(e.which){
+				case 37: //left arrow key
+				if($("#box").position().left <=15){
+					$("#box").clearQueue();
+				}else{
+					$("#box").finish().animate({
+						left: "-=50"
 
-				},'fast');
+					},'fast');
+				}
+					break;
+				case 38: // up arrow key
+				if($("#box").position().top <= 5){
+					$("#box").clearQueue();
+				} else {
+					$("#box").finish().animate({
+						top: "-=50"
+					});
+				}
+					break;
+				case 39: // right arrow key
+				if($("#box").position().left >=530){
+					$("#box").clearQueue();
+				} else{
+					$("#box").finish().animate({
+						left: "+=50"
+					});
+				}
+					break;
+				case 40: // down arrow key
+				if($("#box").position().top >=500){
+					$("#box").clearQueue();
+				}else {
+					$("#box").finish().animate({
+						top: "+=50"
+					});
+				}
+					break;
 			}
-				break;
-			case 38: // up arrow key
-			if($("#box").position().top <= 5){
-				$("#box").clearQueue();
-			} else {
-				$("#box").finish().animate({
-					top: "-=50"
-				});
+		});
+	} else if (($(document).width() > 300)) {
+		$(document).on("keydown",function(e){
+			switch(e.which){
+				case 37: //left arrow key
+				if($("#box").position().left <= 5){
+					$("#box").clearQueue();
+				}else{
+					$("#box").finish().animate({
+						left: "-=50"
+
+					},'fast');
+				}
+					break;
+				case 38: // up arrow key
+				if($("#box").position().top <= 5){
+					$("#box").clearQueue();
+				} else {
+					$("#box").finish().animate({
+						top: "-=50"
+					});
+				}
+					break;
+				case 39: // right arrow key
+				if($("#box").position().left >= 400){
+					$("#box").clearQueue();
+				} else{
+					$("#box").finish().animate({
+						left: "+=50"
+					});
+				}
+					break;
+				case 40: // down arrow key
+				if($("#box").position().top >=500){
+					$("#box").clearQueue();
+				}else {
+					$("#box").finish().animate({
+						top: "+=50"
+					});
+				}
+					break;
 			}
-				break;
-			case 39: // right arrow key
-			if($("#box").position().left >= 599){
-				$("#box").clearQueue();
-			} else{
-				$("#box").finish().animate({
-					left: "+=50"
-				});
-			}
-				break;
-			case 40: // down arrow key
-			if($("#box").position().top >=500){
-				$("#box").clearQueue();
-			}else {
-				$("#box").finish().animate({
-					top: "+=50"
-				});
-			}
-				break;
-		}
-	});
+		});
+	}
+
+	
 }
 
 

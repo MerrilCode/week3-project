@@ -153,17 +153,21 @@ body {
 div >p{
 	color: white;
 }
+/*@media only screen and(max-width: 920px){
+	audio {
+		width:50%;
+	}
+}*/
 @media only screen and (max-width: 720px){
 	#roadCol {
 	position: relative;
     height: 600px;
-    width: 400px;
+    width: 100%;
     background-color: #292929;
     overflow: hidden;
-   /* background-image: url("road.jpg"); */
     background-repeat: repeat;
     /*animation: animate 1s linear infinite;*/
-    margin-left: 50px;
+    margin-left: 0;
 
 	}
 	#score {
@@ -183,4 +187,63 @@ div >p{
 	audio {
 		width:50%;
 	}
+		#currentSpeed {
+		width: 50px;
+		position: absolute;
+		z-index: 1;
+		top:40px;
+		left: 60px;
+		text-align: center;
+		color: red;
+	}
+	#speed {
+		position: relative;
+		margin-top: 25px;
+	}
+		#box {
+		 width:64px;
+		 height: 162px;
+		 position: absolute;
+		 bottom: 8%;
+	     left: 20px;
+	     background-image: url("ferrari_67x164.png");
+	}
+
 }
+
+/*@media only screen and (max-width: 300px){
+	#roadCol {
+	position: relative;
+    height: 600px;
+    width: 250px;
+    background-color: #292929;
+    overflow: hidden;
+    background-repeat: repeat;*/
+    /*animation: animate 1s linear infinite;*/
+    /*margin-left: 50px;*/
+
+	/*}
+	#box {
+		 width:64px;
+		 height: 162px;
+		 position: absolute;*/
+		/* bottom: 8%;
+	     left: 300px;*/
+	    /* right: 50px;
+	     background-image: url("ferrari_67x164.png");
+	}*/
+	/*#score {*/
+		/*width: 100px;
+		height: 100px;*/
+		/*background-color: #cc351a;*/
+	/*	float:left;*/
+		/*text-align: center;*/
+		/*margin-left: 25px;
+		margin-right: 50px;*/
+		/*margin-top: 100px;
+		padding-top: 25px;
+		color: white;
+		font-size: 30px;
+		border-radius: 50%;
+	}
+}*/
