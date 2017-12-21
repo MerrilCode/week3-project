@@ -11,10 +11,10 @@ audio {
 
 #roadCol {
 	position: relative;
-    height: 850px;
+    height: 722px;
     width: 630px;
     background-color: #292929;
-   /* overflow: hidden;*/
+    overflow: hidden;
    /* background-image: url("road.jpg"); */
     background-repeat: repeat;
     /*animation: animate 1s linear infinite;*/
@@ -31,11 +31,11 @@ audio {
 }
 
 #car1 {
-	width: 63px;
-	height: 128px;
+	width: 65px;
+	height: 180px;
 	top: -200px;
     left: 60%;
-     background-image: url("car1.png");
+     background-image: url("redbull-65x180.png");
 }
 
 #car2 {
@@ -49,7 +49,7 @@ audio {
 	width: 68px;
 	height: 128px;
 	top: -600px;
-    left: 30%;
+    left: 20%;
     background-image: url("userCar.png");
 }
 
@@ -212,13 +212,13 @@ div >p{
 	    margin-left: 50px;
 	}
 	#box {
-		 width:64px;
-		 height: 162px;
+		 width:48px;
+		 height: 117px;
 		 position: absolute;
 		 bottom: 8%;
 	     left: 20px;
 	     right: 50px;
-	     background-image: url("ferrari_67x164.png");
+	     background-image: url("ferrari-48x117.png");
 	}
 	#score {
 		width: 100px;
@@ -233,6 +233,16 @@ div >p{
 		color: white;
 		font-size: 30px;
 		border-radius: 50%;
+	}
+	#car1 {
+		width: 48px;
+		height: 132px;
+		background-image: url("redbull-48x132.png");
+	}
+	#car3 {
+		background-image: url("maclaren-48x127.png");
+		width:48px;
+		height: 127px;
 	}
 }
 @keyframes animate {

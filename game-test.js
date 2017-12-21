@@ -50,7 +50,7 @@ function driveCar (){
 				}
 					break;
 				case 38: // up arrow key
-				if($("#box").position().top <= 5){
+				if($("#box").position().top <= 10){
 					$("#box").clearQueue();
 				} else {
 					$("#box").finish().animate({
@@ -68,7 +68,7 @@ function driveCar (){
 				}
 					break;
 				case 40: // down arrow key
-				if($("#box").position().top >=590){
+				if($("#box").position().top >=(roadColHeight-200)){
 					$("#box").clearQueue();
 				}else {
 					$("#box").finish().animate({
