@@ -29,7 +29,7 @@ var car2Array = new Array();
 var car3Array = new Array();
 car1Array[0] = 'lotus-65x180.png';
 car1Array[1] = 'bmw-65x180.png'
-car2Array[0] = 'williams-68x124.png';
+car2Array[0] = 'renaultY-63x173.png';
 car3Array[0] = 'toyota-65x171.png'
 startGame();
 audio.loop=true;

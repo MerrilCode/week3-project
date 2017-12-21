@@ -39,11 +39,11 @@ audio {
 }
 
 #car2 {
-	width: 68px;
-	height: 124px;
+	width: 63px;
+	height: 173px;
 	top: -400px;
     left: 40%;
-    background-image: url("lambo.png");
+    background-image: url("renault-63x173.png");
 }
 #car3 {
 	width: 65px;

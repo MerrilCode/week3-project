@@ -1,6 +1,6 @@
-#WEEK-3 PROJECT#
+# WEEK-3 PROJECT #
 
-###DESCRIPTION###
+### DESCRIPTION ###
 >Created a 2D racing game that can be played on internet browser. The game contains:
 
 >* A movable controller car
