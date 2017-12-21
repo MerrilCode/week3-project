@@ -118,13 +118,13 @@ function repeat(){
 		 scoreCounter++;
 		 fps++;
 
-		 if((scoreCounter % 50 == 0) && (scoreCounter !==100)){
+		 if((scoreCounter % 50 == 0) && (parseInt(currentSpeed.text()) !==310)){
 		 	score.text(parseInt(score.text())+1); 
 		 	currentSpeed.text(parseInt(currentSpeed.text())+2);
 		 	 
 
-		 } else if((scoreCounter % 50 == 0) && (currentSpeed.text() == 100)) {
-		 		currentSpeed.text(parseInt(100));
+		 } else if((scoreCounter % 50 == 0) && (parseInt(currentSpeed.text()) == 310)) {
+		 		currentSpeed.text("100");
 		 	}
 		 else {
 		 	//console.log("The score is counting!")
