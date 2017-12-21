@@ -38,6 +38,7 @@ restart.click(function(){
 	location.reload();
 
 });
+
 function driveCar (){
 		$(document).on("keydown",function(e){
 			switch(e.which){
@@ -117,25 +118,32 @@ function repeat(){
 		 scoreCounter++;
 		 fps++;
 
-		 if(scoreCounter % 50 == 0){
+		 if((scoreCounter % 50 == 0) && (scoreCounter !==100)){
 		 	score.text(parseInt(score.text())+1); 
 		 	currentSpeed.text(parseInt(currentSpeed.text())+2);
+		 	 
 
-		 } else {
-		 	console.log("The score is counting!")
+		 } else if((scoreCounter % 50 == 0) && (currentSpeed.text() == 100)) {
+		 		currentSpeed.text(parseInt(100));
+		 	}
+		 else {
+		 	//console.log("The score is counting!")
 		 }
 		 if(fps%1000 == 0){
 		 	speed++;
 		 	lineSpeed++;
 		 	 selectCars();
 		 } else {
-		 	console.log("Not ready to increase!")
+		 	//console.log("Not ready to increase!")
 		 }
+		
+
 		
 		 restart.hide();
 		 restartDiv.hide();
 		requestAnimationFrame(repeat);
 		carCollisionEffect();
+	
 		
 
 		
