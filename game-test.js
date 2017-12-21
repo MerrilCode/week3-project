@@ -28,9 +28,12 @@ $(document).ready(function(){
 	var car2Array = new Array();
 	var car3Array = new Array();
 	car1Array[0] = './images/lotus-65x180.png';
-	car1Array[1] = './images/bmw-65x180.png'
+	car1Array[1] = './images/bmw-65x180.png';
+	car1Array[2] = './images/redbull-65x180.png';
 	car2Array[0] = './images/renaultY-63x173.png';
-	car3Array[0] = './images/toyota-65x171.png'
+	car2Array[1] = './images/renault-63x173.png';
+	car3Array[0] = './images/toyota-65x171.png';
+	car3Array[1] = './images/maclaren-65x171.png';
 	startGame();
 	audio.loop=true;
 	audio.play();
@@ -141,7 +144,8 @@ function repeat(){
 	restartDiv.hide();
 	requestAnimationFrame(repeat); // calling the function to make it recursive. 
 	carCollisionEffect(); 	
-	changeSpeedMeterFontColour();	
+	changeSpeedMeterFontColour();
+	changeLevelEffect();	
 	}
 }
 
@@ -171,6 +175,9 @@ function stopGame(){
 	$("#crashingCar")[0].play();
 	$("body").css("animation","0s")
 	currentSpeed.text(parseInt("0"));
+	score.effect("pulsate");
+	score.css("color","#02def7");
+	score.effect("shake");
 
 
 }
@@ -225,6 +232,5 @@ function changeSpeedMeterFontColour(){
 		$("#currentSpeed").css("color","#f4071f");
 	}
 }
-
 
 });
