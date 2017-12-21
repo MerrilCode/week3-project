@@ -9,19 +9,19 @@ var car3 = $("#car3");
 var line1 = $('#line1');
 var line2 = $('#line2');
 var line3 = $('#line3');
-var score =$("#score");
 var restart = $("#restart");
 var restartDiv = $("#restartDiv");
 var instruction = $("#instruction");
 var currentSpeed = $("#currentSpeed");
+var score =$("#score");
 var roadColLeft = parseInt(roadCol.css('left'));
 var roadColWidth = parseInt(roadCol.width());
 var roadColHeight = parseInt(roadCol.height());
 var carWidth = parseInt(userCar.width());
 var carHeight = parseInt(userCar.height());
 var speed = 2;
-var lineSpeed = 5;
 var fps = 0;
+var lineSpeed = 5;
 var scoreCounter = 0;
 var animation;
 var car1Array = new Array();
@@ -120,12 +120,15 @@ function repeat(){
 		 	score.text(parseInt(score.text())+1); 
 		 	currentSpeed.text(parseInt(currentSpeed.text())+2);
 
-		 } 
+		 } else {
+		 	console.log("The score is counting!")
+		 }
 		 if(fps%1000 == 0){
 		 	speed++;
 		 	lineSpeed++;
 		 	 selectCars();
-
+		 } else {
+		 	console.log("Not ready to increase!")
 		 }
 		
 		 restart.hide();
@@ -162,7 +165,6 @@ function startGame(){
 function stopGame(){
 	cancelAnimationFrame(animation);
 	stopDrive();
-	gamePlay = false;
 	restart.fadeToggle();	
 	restartDiv.fadeToggle();
 	userCar.effect("bounce",{times:2});
@@ -170,6 +172,8 @@ function stopGame(){
 	audio.pause();
 	$("#crashingCar")[0].play();
 	$("body").css("animation","0s")
+	currentSpeed.text(parseInt("0"));
+
 
 }
 
