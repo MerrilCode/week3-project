@@ -1,0 +1,256 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-image: url("../images/page-background.jpeg");
+	background-repeat: repeat;
+    animation: animate linear 10s infinite;
+}
+audio {
+	width: 70%;
+}
+
+#roadCol {
+	position: relative;
+    height: 1000px;
+    width: 630px;
+    background-color: #292929;
+    overflow: hidden;
+   /* background-image: url("road.jpg"); */
+    background-repeat: repeat;
+    /*animation: animate 1s linear infinite;*/
+    margin-left: 50px;
+
+}
+
+.car{
+    position: absolute;
+    height: 60px;
+    width: 40px;
+   /* border-radius: 5px;
+    box-shadow: 0px 1px 8px 0px black;*/
+}
+
+#car1 {
+	width: 65px;
+	height: 180px;
+	top: -200px;
+    left: 60%;
+     background-image: url("../images/redbull-65x180.png");
+}
+
+#car2 {
+	width: 63px;
+	height: 173px;
+	top: -400px;
+    left: 40%;
+    background-image: url("../images/renault-63x173.png");
+}
+#car3 {
+	width: 65px;
+	height: 171px;
+	top: -600px;
+    left: 20%;
+    background-image: url("../images/maclaren-65x171.png");
+}
+
+#box {
+	 width:64px;
+	 height: 162px;
+	 position: absolute;
+	 bottom: 8%;
+     left: 300px;
+     background-image: url("../images/ferrari_67x164.png");
+}
+#score {
+	width: 100px;
+	height: 100px;
+	background-color: #cc351a;
+	float:left;
+	text-align: center;
+	margin-left: 25px;
+	margin-right: 50px;
+	margin-top: 100px;
+	padding-top: 25px;
+	color: white;
+	font-size: 30px;
+	border-radius: 50%;
+}
+/*#speedoMeter {
+	width : 200px;
+	height: 200px;
+	background-color: red;
+	float: right; 
+	margin-top: 200px;
+}*/
+.line{
+    position: absolute;
+    height: 200px;
+    width: 4%;
+    margin-left: 48%;
+    background-color: rgba(255,255,255,0.5);
+}
+#line_1{
+    top: -150px;
+}
+#line_2{
+    top: 150px;
+}
+#line_3{
+    top: 450px;
+}
+#restartDiv {
+	position: relative;
+	width:30%;
+	height: 20%;
+	background-color: #2cbfe8;
+	display: none;
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	margin-left: 50px;
+	margin-right: 50px;
+	padding-top: 50px;
+	z-index: 1;
+	border-radius: 25%;
+	font-size: 30px;
+}
+#instruction {
+	background-color: white;
+	background-color: #2cbfe8;
+}
+#instruction p{
+	color: black;
+}
+#speed {
+	position: relative;
+	width: 100%;
+	margin-top: 25px;
+}
+#currentSpeed {
+	width: 50px;
+	position: absolute;
+	z-index: 1;
+	top:40px;
+	left: 60px;
+	text-align: center;
+	color: red;
+	font-size: 20px;
+}
+#speedoMeter {
+	z-index: -1;
+}
+#audioControl {
+	margin-top: 25px;
+}
+div >p{
+	color: white;
+}
+@media only screen and (max-width: 920px){
+	#roadCol {
+	position: relative;
+    height: 600px;
+    width: 80%;
+    background-color: #292929;
+    overflow: hidden;
+    background-repeat: repeat;
+    /*animation: animate 1s linear infinite;*/
+	}
+	#box {
+		position: relative;
+	}
+	#restartDiv {
+		width: 50%;
+		height: 50%;
+	}
+	#score {
+		/*width: 100px;
+		height: 100px;*/
+		background-color: #cc351a;
+	/*	float:left;*/
+		text-align: center;
+		margin-left: 25px;
+		margin-right: 50px;
+		margin-top: 100px;
+		padding-top: 25px;
+		color: white;
+		font-size: 30px;
+		border-radius: 50%;
+	}
+	audio {
+		width:50%;
+	}
+		#currentSpeed {
+		width: 50px;
+		position: absolute;
+		z-index: 1;
+		top:40px;
+		left: 60px;
+		text-align: center;
+		color: red;
+	}
+	#speed {
+		position: relative;
+		margin-top: 25px;
+	}
+		#box {
+		 width:64px;
+		 height: 162px;
+		 position: absolute;
+		 bottom: 8%;
+	     left: 20px;
+	     background-image: url("../images/ferrari_67x164.png");
+	}
+
+}
+
+@media only screen and (max-width: 400px){
+	#roadCol {
+		position: relative;
+	    height: 600px;
+	    width: 300px;
+	    background-color: #292929;
+	    overflow: hidden;
+	    margin-left: 50px;
+	}
+	#box {
+		 width:48px;
+		 height: 117px;
+		 position: absolute;
+		 bottom: 8%;
+	     left: 20px;
+	     right: 50px;
+	     background-image: url("../images/ferrari-48x117.png");
+	}
+	#score {
+		width: 100px;
+		height: 100px;
+		background-color: #cc351a;
+		float:left;
+		text-align: center;
+		margin-left: 25px;
+		margin-right: 50px;
+		margin-top: 100px;
+		padding-top: 25px;
+		color: white;
+		font-size: 30px;
+		border-radius: 50%;
+	}
+	#car1 {
+		width: 48px;
+		height: 132px;
+		background-image: url("../images/redbull-48x132.png");
+	}
+	#car3 {
+		background-image: url("../images/maclaren-48x127.png");
+		width:48px;
+		height: 127px;
+	}
+}
+@keyframes animate {
+	from {
+		background-position: 0px 0px;
+	}
+	to {
+		background-position: 0 1000px;
+	}
+}

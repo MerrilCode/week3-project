@@ -1,4 +1,6 @@
 # WEEK-3 PROJECT #
+### PURPOSE ###
+> The game was developed as part of IT consultant training program at Sparta global. All usage of audio and images are for educational purpose only and can be removed on copyright conflict.
 
 ### DESCRIPTION ###
 >Created a 2D racing game that can be played on internet browser. The game contains:
@@ -29,4 +31,11 @@
 
 ### INSTALLATION AND USAGE ###
 > The game files can be found from my [GitHub profile ](https://github.com/MerrilCode/week3-project)
+> 
 > The files needs to be locally available to play it on a browser.
+> 
+> Working game javascript and css files are in the parent directory called week3-project. 
+> 
+> Some of the images and sounds are kept in the parent directory such as road.jpg, page-background.jpeg crashingSound.mp3,f1Sound due to possible detection issues of files on game load. All other images are found in the /image directory. 
+>
+>Please follow the same directory tree structure when trying to play from a local machine.
