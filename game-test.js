@@ -27,10 +27,10 @@ var animation;
 var car1Array = new Array();
 var car2Array = new Array();
 var car3Array = new Array();
-car1Array[0] = 'lotus-65x180.png';
-car1Array[1] = 'bmw-65x180.png'
-car2Array[0] = 'renaultY-63x173.png';
-car3Array[0] = 'toyota-65x171.png'
+car1Array[0] = './images/lotus-65x180.png';
+car1Array[1] = './images/bmw-65x180.png'
+car2Array[0] = './images/renaultY-63x173.png';
+car3Array[0] = './images/toyota-65x171.png'
 startGame();
 audio.loop=true;
 audio.play();
@@ -86,7 +86,7 @@ function driveCar (){
 
  function carDown(car) { // Makes the cars come down from top of the screen by checking the div heightand car top values. 
     var carCurrentTop = parseInt(car.css('top'));
-    roadCol.css('background-image','url(' +"road.jpg" + ')');
+    roadCol.css('background-image','url(' +"./images/road.jpg" + ')');
     
     if (carCurrentTop > roadColHeight) { // If car top attribute is greater than div height then deduct 200px. this function is called in a recursive function(repeat)
        carCurrentTop = -200;
@@ -120,7 +120,7 @@ function repeat(){
 
 		 if((scoreCounter % 50 == 0) && (parseInt(currentSpeed.text()) !==310)){ // if the score counter is devisible by 50 then increase the score by one.
 		 	score.text(parseInt(score.text())+1); 
-		 	currentSpeed.text(parseInt(currentSpeed.text())+2); // same logic as before but increments by 2 for speed
+		 	currentSpeed.text(parseInt(currentSpeed.text())+2+" mph"); // same logic as before but increments by 2 for speed
 		 	 
 
 		 } else if((scoreCounter % 50 == 0) && (parseInt(currentSpeed.text()) == 310)) { // limits the top speed to 310
