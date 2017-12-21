@@ -11,7 +11,7 @@ audio {
 
 #roadCol {
 	position: relative;
-    height: 722px;
+    height: 825px;
     width: 630px;
     background-color: #292929;
     overflow: hidden;
@@ -46,11 +46,11 @@ audio {
     background-image: url("lambo.png");
 }
 #car3 {
-	width: 68px;
-	height: 128px;
+	width: 65px;
+	height: 171px;
 	top: -600px;
     left: 20%;
-    background-image: url("userCar.png");
+    background-image: url("maclaren-65x171.png");
 }
 
 #box {

@@ -24,11 +24,12 @@ var lineSpeed = 5;
 var fps = 0;
 var scoreCounter = 0;
 var animation;
-var cars = new Array();
-cars[0] = 'car1.png';
-cars[1] = 'userCar.png';
-cars[2] = 'lambo.png';
-// var roadSpeed = 5000;
+var car1Array = new Array();
+var car2Array = new Array();
+var car3Array = new Array();
+car1Array[0] = 'lotus-65x180.png';
+// cars[1] = 'userCar.png';
+// cars[2] = 'lambo.png';
 startGame();
 audio.loop=true;
 audio.play();
@@ -125,7 +126,7 @@ function repeat(){
 		 	// roadSpeed -= 1000; // test and fix
 		 	// roadRepeat(5000); // test and fix
 		 	lineSpeed++;
-		 	// selectCars();
+		 	 selectCars();
 
 		 }
 		
@@ -200,13 +201,13 @@ function stopDrive (){
 }
 
 function selectCars(){
-	var car1Image = Math.floor(Math.random() * cars.length);
-	var car2Image = Math.floor(Math.random() * cars.length);
-	var car3Image = Math.floor(Math.random() * cars.length);
-	console.log(car1Image,car2Image,car3Image);
-	car1.css('background-image','url(' +cars[car1Image] + ')');
-	car2.css('background-image','url(' +cars[car2Image] + ')');
-	car3.css('background-image','url(' +cars[car3Image] + ')');
+	var car1Image = Math.floor(Math.random() * car1Array.length);
+	// var car2Image = Math.floor(Math.random() * cars.length);
+	// var car3Image = Math.floor(Math.random() * cars.length);
+	// console.log(car1Image,car2Image,car3Image);
+	car1.css('background-image','url(' +car1Array[car1Image] + ')');
+	// car2.css('background-image','url(' +cars[car2Image] + ')');
+	// car3.css('background-image','url(' +cars[car3Image] + ')');
 }
 
 function carCollisionEffect(){
