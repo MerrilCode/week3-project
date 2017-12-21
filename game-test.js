@@ -140,7 +140,8 @@ function repeat(){
 	restart.hide(); 
 	restartDiv.hide();
 	requestAnimationFrame(repeat); // calling the function to make it recursive. 
-	carCollisionEffect(); 		
+	carCollisionEffect(); 	
+	changeSpeedMeterFontColour();	
 	}
 }
 
@@ -215,6 +216,13 @@ function carCollisionEffect(){ //JQuery UI effects on collision
 		car2.effect("bounce",{times:2});
 	} else if(carCollide(userCar,car3)){
 		car3.effect("bounce",{times:2});
+	}
+}
+function changeSpeedMeterFontColour(){
+	if(parseInt(currentSpeed.text()) == 50){
+		$("#currentSpeed").css("color","#fffa02");
+	}else if(parseInt(currentSpeed.text()) == 100){
+		$("#currentSpeed").css("color","#f4071f");
 	}
 }
 
