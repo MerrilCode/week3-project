@@ -84,20 +84,20 @@ function driveCar (){
 }
 
 
- function carDown(car) {
+ function carDown(car) { // Makes the cars come down from top of the screen by checking the div heightand car top values. 
     var carCurrentTop = parseInt(car.css('top'));
     roadCol.css('background-image','url(' +"road.jpg" + ')');
     
-    if (carCurrentTop > roadColHeight) {
+    if (carCurrentTop > roadColHeight) { // If car top attribute is greater than div height then deduct 200px. this function is called in a recursive function(repeat)
        carCurrentTop = -200;
-     var carLeft = parseInt(Math.random() * (roadColWidth - carWidth));
-    car.css('left', carLeft);
+       var carLeft = parseInt(Math.random() * (roadColWidth - carWidth));// determines the left position of the cars coming down by making it randomly placed.
+    	car.css('left', carLeft);
      }
 	   
     car.css('top', carCurrentTop +speed);
 }
 function lineDown(line){
-	var lineCurrentTop = parseInt(line.css('top'));
+	var lineCurrentTop = parseInt(line.css('top')); // same logic as making cars coming down. called inside repeat.
     if (lineCurrentTop > roadColHeight) {
         lineCurrentTop = -300;
     }
@@ -105,26 +105,26 @@ function lineDown(line){
 }
 
 function repeat(){
-	if(carCollide(userCar,car1)||carCollide(userCar,car2)||carCollide(userCar,car3)){
+	if(carCollide(userCar,car1)||carCollide(userCar,car2)||carCollide(userCar,car3)){ // checks if the the cars collide. if yes, stop game
 		stopGame();
 
 	} else{
-		 carDown(car1);
+		 carDown(car1); 
 		 carDown(car2);
 		 carDown(car3);
 		 lineDown(line1);
 		 lineDown(line2);
 		 lineDown(line3);
-		 scoreCounter++;
+		 scoreCounter++; // increment score counter and fps
 		 fps++;
 
-		 if((scoreCounter % 50 == 0) && (parseInt(currentSpeed.text()) !==310)){
+		 if((scoreCounter % 50 == 0) && (parseInt(currentSpeed.text()) !==310)){ // if the score counter is devisible by 50 then increase the score by one.
 		 	score.text(parseInt(score.text())+1); 
-		 	currentSpeed.text(parseInt(currentSpeed.text())+2);
+		 	currentSpeed.text(parseInt(currentSpeed.text())+2); // same logic as before but increments by 2 for speed
 		 	 
 
-		 } else if((scoreCounter % 50 == 0) && (parseInt(currentSpeed.text()) == 310)) {
-		 		currentSpeed.text("100");
+		 } else if((scoreCounter % 50 == 0) && (parseInt(currentSpeed.text()) == 310)) { // limits the top speed to 310
+		 		currentSpeed.text("310");
 		 	}
 		 else {
 		 	//console.log("The score is counting!")
@@ -139,10 +139,10 @@ function repeat(){
 		
 
 		
-		 restart.hide();
+		 restart.hide(); 
 		 restartDiv.hide();
-		requestAnimationFrame(repeat);
-		carCollisionEffect();
+		requestAnimationFrame(repeat); // calling the function to make it recursive. 
+		carCollisionEffect(); 
 	
 		
 
@@ -163,7 +163,7 @@ function roadRepeat(){
 	// container.css('animation','5s '+'linear '+'infinite');
 }
 
-function startGame(){
+function startGame(){ // starts the game 
 	roadRepeat();
 	driveCar();
 	animation = requestAnimationFrame(repeat);
@@ -186,7 +186,7 @@ function stopGame(){
 
 }
 
-function carCollide(car1,car2){
+function carCollide(car1,car2){ //logic to check the overlapping of divs of cars
 		var x1 = car1.offset().left;
         var y1 = car1.offset().top;
         var h1 = car1.outerHeight(true);
@@ -211,7 +211,7 @@ function stopDrive (){
 	$(document).off("keydown");
 }
 
-function selectCars(){
+function selectCars(){ // selecting cars randomly when the speed changes
 	var car1Image = Math.floor(Math.random() * car1Array.length);
 	var car2Image = Math.floor(Math.random() * car2Array.length);
 	var car3Image = Math.floor(Math.random() * car3Array.length);
@@ -220,7 +220,7 @@ function selectCars(){
 	car3.css('background-image','url(' +car3Array[car3Image] + ')');
 }
 
-function carCollisionEffect(){
+function carCollisionEffect(){ //JQuery UI effects on collision
 	if(carCollide(userCar,car1)){
 		car1.effect("bounce",{times:2});
 	} else if(carCollide(userCar,car2)){
