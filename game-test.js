@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	var audio = $("audio")[0];
 	audio.loop=false;
+$("#start").on("click",function(){
 	var roadCol = $("#roadCol");
 	var userCar = $("#box");
 	var car1 = $("#car1");
@@ -232,5 +233,6 @@ function changeSpeedMeterFontColour(){
 		$("#currentSpeed").css("color","#f4071f");
 	}
 }
+});
 
 });
